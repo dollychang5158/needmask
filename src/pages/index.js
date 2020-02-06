@@ -1,23 +1,35 @@
-import React, { useEffect, useState, memo } from "react"
+import React, { useEffect, useState } from "react"
 import ListItem from "../components/hospital-item"
 import ListItemLabel from "../components/list-item-label"
-import { Link } from "gatsby"
 import { cities } from "../lib/cities"
 import DropDown from "../components/dropdown"
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 const SORT_BY_ADULT = "成人"
 const SORT_BY_CHILD = "兒童"
 const SORT_BY_TOTAL = "總數"
 const SORT_ARRAY = [SORT_BY_ADULT, SORT_BY_CHILD, SORT_BY_TOTAL]
+
 const IndexPage = () => {
   const [hospitals, setHospitals] = useState([])
   const [city, setCity] = useState("台北市")
   const [area, setArea] = useState("中正區")
   const [sortBy, setSort] = useState(SORT_BY_CHILD)
   const [times, setTimes] = useState(0)
+
+  const sortFn = (a, b) => {
+    if (sortBy === SORT_BY_ADULT) {
+      return a.properties.mask_adult > b.properties.mask_adult ? -1 : 1
+    } else if (sortBy === SORT_BY_CHILD) {
+      return a.properties.mask_child > b.properties.mask_child ? -1 : 1
+    } else if (sortBy === SORT_BY_TOTAL) {
+      return a.properties.mask_adult + a.properties.mask_child >
+        b.properties.mask_adult + b.properties.mask_child
+        ? -1
+        : 1
+    }
+  }
 
   useEffect(() => {
     console.log("fetch")
@@ -38,18 +50,7 @@ const IndexPage = () => {
     .filter(hospital => {
       return hospital.properties.address.indexOf(city + area) !== -1
     })
-    .sort((a, b) => {
-      if (sortBy === SORT_BY_ADULT) {
-        return a.properties.mask_adult > b.properties.mask_adult ? -1 : 1
-      } else if (sortBy === SORT_BY_CHILD) {
-        return a.properties.mask_child > b.properties.mask_child ? -1 : 1
-      } else if (sortBy === SORT_BY_TOTAL) {
-        return a.properties.mask_adult + a.properties.mask_child >
-          b.properties.mask_adult + b.properties.mask_child
-          ? -1
-          : 1
-      }
-    })
+    .sort(sortFn)
 
   const handleCityChange = city => {
     setCity(city)
@@ -60,12 +61,14 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <div className="container">
+        <div>點擊尋找到你/妳的口罩！</div>
         <DropDown
           current={city}
           onChange={handleCityChange}
           values={Object.keys(cities)}
         />
         <DropDown current={area} onChange={setArea} values={cities[city]} />
+
         <DropDown current={sortBy} onChange={setSort} values={SORT_ARRAY} />
 
         <ListItemLabel />
@@ -76,9 +79,7 @@ const IndexPage = () => {
             coordinates={hospital.geometry.coordinates}
           />
         ))}
-        <Image />
       </div>
-      <Link to="/page-2/">Go to page 2</Link>
     </Layout>
   )
 }

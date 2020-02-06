@@ -1,34 +1,29 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import DetectiveImage from "../assets/header02.svg"
+import Icon from "../assets/navLogoIcon.svg"
+import More from "../assets/navMoreIcon.svg"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+  <>
+    <nav className="navbar fixed-top navbar-light bg-white">
+      <a className="left top">
+        <div className="row">
+          <Icon />
+          <More />
+        </div>
+      </a>
+    </nav>
+    <div className="container">
+      <div className="row">
+        <div className="slogan">你今天 買到口罩了嗎？</div>
+        <div>
+          <DetectiveImage />
+        </div>
+      </div>
     </div>
-  </header>
+  </>
 )
 
 Header.propTypes = {
