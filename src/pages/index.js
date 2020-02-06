@@ -5,6 +5,7 @@ import { cities } from "../lib/cities"
 import DropDown from "../components/dropdown"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { Link } from "gatsby"
 
 const SORT_BY_ADULT = "成人"
 const SORT_BY_CHILD = "兒童"

@@ -11,7 +11,14 @@ const Header = ({ siteTitle }) => (
       <a className="left top">
         <div className="row">
           <Icon />
-          <More />
+          <Link
+            to="/info/"
+            state={{
+              modal: true,
+            }}
+          >
+            <More />
+          </Link>
         </div>
       </a>
     </nav>
