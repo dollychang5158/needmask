@@ -7,10 +7,10 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
 
+const SORT_BY_TOTAL = "總數"
 const SORT_BY_ADULT = "成人"
 const SORT_BY_CHILD = "兒童"
-const SORT_BY_TOTAL = "總數"
-const SORT_ARRAY = [SORT_BY_ADULT, SORT_BY_CHILD, SORT_BY_TOTAL]
+const SORT_ARRAY = [SORT_BY_TOTAL,SORT_BY_ADULT, SORT_BY_CHILD]
 
 const IndexPage = () => {
   const [hospitals, setHospitals] = useState([])
@@ -61,27 +61,48 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <div className="container">
-        <div>點擊尋找到你/妳的口罩！</div>
-        <DropDown
-          current={city}
-          onChange={handleCityChange}
-          values={Object.keys(cities)}
-        />
-        <DropDown current={area} onChange={setArea} values={cities[city]} />
-
-        <DropDown current={sortBy} onChange={setSort} values={SORT_ARRAY} />
-
-        <ListItemLabel />
-        {matchedHospitals.map((hospital, index) => (
-          <ListItem
-            key={index}
-            properties={hospital.properties}
-            coordinates={hospital.geometry.coordinates}
+      <>
+      <div className="container block01">
+        <div className="search">
+          <p>點擊位置，尋找你/妳的口罩：</p>
+          <DropDown
+            current={city}
+            onChange={handleCityChange}
+            values={Object.keys(cities)}
           />
-        ))}
+          <span />
+          <DropDown current={area} onChange={setArea} values={cities[city]} />
+        </div>
       </div>
-    </Layout>
+
+      <div className="container block02">
+        <div className="sort">
+          <div className="note"><p>＊資料每兩分鐘更新一次，預設排序為剩餘口罩數量總加數量 多>少。</p></div>
+          <div className="sort-item">
+            <p>排序：</p>
+            <DropDown current={sortBy} onChange={setSort} values={SORT_ARRAY} />
+          </div>
+        </div>
+      </div>
+
+      <div className="container block03">
+        <ListItemLabel />
+      </div>
+
+      <div className="block04">
+        <div className="container item-content-group">
+          {matchedHospitals.map((hospital, index) => (
+            <ListItem
+              key={index}
+              properties={hospital.properties}
+              coordinates={hospital.geometry.coordinates}
+            />
+          ))}
+        </div>
+      </div>
+
+      </>
+    </Layout >
   )
 }
 

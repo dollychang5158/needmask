@@ -1,7 +1,7 @@
 import React, {memo} from 'react'
 const DropDown = ({ current, values, onChange }) => (
   <select
-    className="custom-select custom-select-lg col-4"
+    className="custom-select custom-select-lg col-lg-4 col-5"
     onChange={event => {
       onChange(event.target.value)
     }}

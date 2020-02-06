@@ -1,0 +1,267 @@
+//RWD setting//
+$lg: 1024px;
+$md: 768px;
+$sm: 425px;
+
+@mixin breakpoint($point) {
+    @if $point==lg {
+        @media screen and (max-width: $lg) {
+            @content;
+        }
+    }
+
+    @else if $point==md {
+        @media screen and (max-width: $md) {
+            @content;
+        }
+    }
+
+    @else if $point==sm {
+        @media screen and (max-width: $sm) {
+            @content;
+        }
+    }
+}
+
+@mixin breakpoint1($point) {
+    @if $point==lg {
+        @media screen and (min-width: $lg) {
+            @content;
+        }
+    }
+
+    @else if $point==md {
+        @media screen and (min-width: $md) {
+            @content;
+        }
+    }
+
+    @else if $point==sm {
+        @media screen and (min-width: $sm) {
+            @content;
+        }
+    }
+}
+
+//
+// Color system
+//
+
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+$nmYellow:#FFC500;
+$nmGray:#4B453F;
+$nmAlert:#9D2D2D;
+
+
+// 思源黑文字範圍設定
+
+@font-face {
+    font-family: "Noto Sans TC";
+    src: local("Noto Sans TC"), local(Helvetica), local(Arial);
+    unicode-range: U+4E00-9FFF, U+00-024F;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*
+* Noto Sans TC (Chinese_traditional) http://www.google.com/fonts/earlyaccess
+ */
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 100;
+    src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.otf) format('opentype');
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 300;
+    src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.otf) format('opentype');
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 400;
+    src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.otf) format('opentype');
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.otf) format('opentype');
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.otf) format('opentype');
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.otf) format('opentype');
+    font-display: fallback;
+}
+
+body {
+    font-family: '微軟正黑體', 'Helvetica', 'Arial';
+    src: local('微軟正黑體'), local('Helvetica'), local('Arial');
+    font-size: 18px;
+    line-height: 1.8;
+    min-height: 100vh;
+    font-weight: 400;
+    margin: 0;
+
+    @include breakpoint(sm) {
+        line-height: 2;
+        font-weight: 300;
+    }
+}
+
+
+a {
+    cursor: pointer;
+    text-decoration-line: none;
+
+    &:focus {
+        text-decoration-line: none;
+    }
+
+    &:hover {
+        text-decoration-line: none;
+    }
+}
+
+a {
+    color: $gray-700;
+
+    &:focus {
+        color: $gray-700;
+    }
+
+    &:hover {
+        color: $gray-700;
+    }
+
+    &:active {
+        color: $gray-700;
+    }
+}
+
+
+
+.flexC {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(20px)
+    }
+}
+
+@keyframes scrollM {
+    0% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(15px)
+    }
+}
+
+@keyframes rightGo {
+    0% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(30px)
+    }
+}
+
+
+@keyframes hoverTop {
+    0% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(5px);
+        transform: translateX(5px)
+    }
+
+}
+
+@keyframes hoverBottom {
+    0% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-5px);
+        transform: translateX(-5px)
+    }
+
+}
+
+@keyframes goBtn {
+    0% {
+        transform: 1;
+    }
+
+    100% {
+        transform: scale(1.01);
+        transform-style: preserve-3d;
+    }
+
+}

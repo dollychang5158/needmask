@@ -385,7 +385,7 @@ p {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  /* margin-bottom: 1.45rem; */
 }
 figure {
   margin-left: 0;
@@ -639,5 +639,5 @@ pre tt:after {
 
   border: 2px solid #4B453F;
   transform: rotate(-4.81deg);
-  background-image: url("../assets/header01.svg")
+  background-image: url("../assets/header01.svg");
 }

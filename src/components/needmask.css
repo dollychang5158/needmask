@@ -1,0 +1,680 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Noto Sans TC";
+  src: local("Noto Sans TC"), local(Helvetica), local(Arial);
+  unicode-range: U+4E00-9FFF, U+00-024F;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/*
+* Noto Sans TC (Chinese_traditional) http://www.google.com/fonts/earlyaccess
+ */
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 100;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff) format("woff"), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.otf) format("opentype");
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 300;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff) format("woff"), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.otf) format("opentype");
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff) format("woff"), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.otf) format("opentype");
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff) format("woff"), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.otf) format("opentype");
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 700;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff) format("woff"), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.otf) format("opentype");
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff) format("woff"), url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.otf) format("opentype");
+  font-display: fallback;
+}
+
+body {
+  font-family: '微軟正黑體', 'Helvetica', 'Arial';
+  src: local("微軟正黑體"), local("Helvetica"), local("Arial");
+  font-size: 18px;
+  line-height: 1.8;
+  min-height: 100vh;
+  font-weight: 400;
+  margin: 0;
+}
+
+@media screen and (max-width: 425px) {
+  body {
+    line-height: 2;
+    font-weight: 300;
+  }
+}
+
+a {
+  cursor: pointer;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
+a:focus {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
+a:hover {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
+a {
+  color: #495057;
+}
+
+a:focus {
+  color: #495057;
+}
+
+a:hover {
+  color: #495057;
+}
+
+a:active {
+  color: #495057;
+}
+
+.flexC {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+ul {
+  list-style: none;
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+}
+
+@-webkit-keyframes scrollM {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px);
+  }
+}
+
+@keyframes scrollM {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px);
+  }
+}
+
+@-webkit-keyframes rightGo {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
+  }
+}
+
+@keyframes rightGo {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
+  }
+}
+
+@-webkit-keyframes hoverTop {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+    transform: translateX(5px);
+  }
+}
+
+@keyframes hoverTop {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+    transform: translateX(5px);
+  }
+}
+
+@-webkit-keyframes hoverBottom {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+}
+
+@keyframes hoverBottom {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+}
+
+@-webkit-keyframes goBtn {
+  0% {
+    -webkit-transform: 1;
+            transform: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.01);
+            transform: scale(1.01);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+  }
+}
+
+@keyframes goBtn {
+  0% {
+    -webkit-transform: 1;
+            transform: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.01);
+            transform: scale(1.01);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    -webkit-box-shadow: 0 0 10px rgba(75, 69, 63, 0.25);
+            box-shadow: 0 0 10px rgba(75, 69, 63, 0.25);
+  }
+}
+
+select:hover {
+  cursor: pointer;
+}
+
+.narbar-content {
+  max-width: 1120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.narbar-content a {
+  display: block;
+}
+
+.ReactModal__Overlay {
+  z-index: 9999;
+}
+
+.ReactModal__Overlay .ReactModal__Content {
+  background-color: initial;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ReactModal__Overlay .ReactModal__Content .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #4B453F;
+  position: relative;
+}
+
+.ReactModal__Overlay .ReactModal__Content .content:before {
+  content: " ";
+  width: 10px;
+  height: 100px;
+  background-color: #FFC500;
+  position: absolute;
+  top: 30px;
+  left: -30px;
+}
+
+.ReactModal__Overlay .ReactModal__Content .content a {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  display: block;
+  position: relative;
+  border: 3px solid #4B453F;
+  border-radius: 100px;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  width: 30px;
+  height: 30px;
+}
+
+.ReactModal__Overlay .ReactModal__Content .content a:hover {
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.ReactModal__Overlay .ReactModal__Content .content a:before {
+  content: " ";
+  width: 3px;
+  height: 15px;
+  border-radius: 5px;
+  background-color: #4B453F;
+  position: absolute;
+  top: 22.5%;
+  left: 42.5%;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.ReactModal__Overlay .ReactModal__Content .content a:after {
+  content: " ";
+  width: 3px;
+  height: 15px;
+  border-radius: 5px;
+  background-color: #4B453F;
+  position: absolute;
+  top: 22.5%;
+  left: 42.5%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.ReactModal__Overlay .ReactModal__Content .content p {
+  font-size: .85em;
+  font-weight: 300;
+}
+
+.keyview svg {
+  width: 100%;
+}
+
+.keyview .kv-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  max-width: 1120px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .keyview .kv-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.keyview .kv-content .title {
+  position: relative;
+}
+
+.keyview .kv-content .title h1 {
+  position: absolute;
+  top: .25em;
+  left: 1em;
+  color: #FFFFFF;
+  text-shadow: 2px 2px #4B453F;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  -webkit-transform: rotate(-4.81deg);
+          transform: rotate(-4.81deg);
+  font-size: 2.5em;
+}
+
+@media screen and (max-width: 425px) {
+  .keyview .kv-content .title h1 {
+    font-size: 2em;
+    top: 1.25em;
+  }
+}
+
+.keyview .kv-content .title h1 .sec-title {
+  margin-left: 1em;
+}
+
+@media screen and (max-width: 425px) {
+  .keyview .kv-content .img-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .keyview .kv-content .img-content svg {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+.block01 .search {
+  margin-bottom: 30px;
+}
+
+.block01 .search span {
+  display: inline-block;
+  width: 1em;
+  height: auto;
+}
+
+.block02 .sort {
+  margin-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .block02 .sort {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+.block02 .sort p {
+  margin-bottom: 0;
+}
+
+.block02 .sort .note {
+  color: #9D2D2D;
+}
+
+@media screen and (max-width: 768px) {
+  .block02 .sort .note {
+    margin-bottom: 15px;
+    font-size: .8em;
+    width: 100%;
+  }
+}
+
+.block02 .sort .sort-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+@media screen and (max-width: 768px) {
+  .block02 .sort .sort-item {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    width: 100%;
+  }
+}
+
+.block02 .sort .sort-item select {
+  width: 250px;
+}
+
+.block03 .item-title {
+  padding: 1em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  border-top: 1px solid rgba(75, 69, 63, 0.25);
+}
+
+@media screen and (max-width: 768px) {
+  .block03 .item-title {
+    display: none;
+  }
+}
+
+.block03 .item-title p {
+  margin-left: 5px;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.block03 .item-title p:before {
+  content: " ";
+  position: absolute;
+  left: -20px;
+  width: 15px;
+  height: 25px;
+  background-color: #FFC500;
+}
+
+.block04 {
+  background-color: rgba(255, 197, 0, 0.25);
+  position: relative;
+}
+
+.block04 .item-content-group {
+  padding-top: 30px;
+}
+
+.block04 .desc {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-bottom: 0px;
+}
+
+@media screen and (max-width: 768px) {
+  .block04 .desc {
+    margin-bottom: 10px;
+  }
+}
+
+.block04 a.item {
+  color: #495057;
+}
+
+.block04 a.item:focus {
+  color: #495057;
+}
+
+.block04 a.item:hover {
+  color: #495057;
+}
+
+.block04 a.item:active {
+  color: #495057;
+}
+
+.block04 a.item .item-content {
+  background-color: white;
+  border: 1px solid #4B453F;
+  border-radius: 4px;
+  padding: 1em 0;
+}
+
+.block04 a.item .item-content .number {
+  font-size: 3em;
+  font-weight: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.block04 a.item .item-content .number p {
+  margin-bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.block04 a.item .item-content .number span {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .block04 a.item .item-content .number span {
+    background-color: #FFC500;
+    border-radius: 100px;
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 30px;
+    margin-right: 5px;
+  }
+}
+
+.block04 a.item .item-content .map {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.block04 a.item .item-content .map svg {
+  width: 30px;
+  height: 30px;
+  margin: 1em 0;
+}
+
+footer {
+  text-align: center;
+  color: #4B453F;
+  font-weight: 300;
+  font-size: .85em;
+  padding: 30px;
+  background-color: rgba(255, 197, 0, 0.25);
+}
+/*# sourceMappingURL=needmask.css.map */

@@ -1,0 +1,345 @@
+@import "rwdColor";
+
+nav {
+    @include breakpoint(md){
+        box-shadow: 0 0 10px rgba($nmGray, $alpha: .25);
+    }
+}
+
+select{
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.narbar-content {
+    max-width: 1120px;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+
+    a {
+        display: block;
+    }
+}
+
+.ReactModal__Overlay {
+    z-index: 9999;
+
+    .ReactModal__Content {
+        background-color: initial;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            color: $nmGray;
+            position: relative;
+
+            &:before {
+                content: " ";
+                width: 10px;
+                height: 100px;
+                background-color: $nmYellow;
+                position: absolute;
+                top: 30px;
+                left: -30px;
+            }
+
+            a {
+                align-self: flex-end;
+                display: block;
+                position: relative;
+                border: 3px solid $nmGray;
+                border-radius: 100px;
+                transition: all .2s;
+                width: 30px;
+                height: 30px;
+
+                &:hover {
+                    transform: scale(1.25);
+                    transition: all .2s;
+                }
+
+                &:before {
+                    content: " ";
+                    width: 3px;
+                    height: 15px;
+                    border-radius: 5px;
+                    background-color: $nmGray;
+                    position: absolute;
+                    top: 22.5%;
+                    left: 42.5%;
+                    transform: rotate(-45deg);
+                }
+
+                &:after {
+                    content: " ";
+                    width: 3px;
+                    height: 15px;
+                    border-radius: 5px;
+                    background-color: $nmGray;
+                    position: absolute;
+                    top: 22.5%;
+                    left: 42.5%;
+                    transform: rotate(45deg);
+                }
+            }
+
+            p {
+                font-size: .85em;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+.keyview {
+    svg {
+        width: 100%;
+    }
+
+    .kv-content {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        max-width: 1120px;
+        justify-content: center;
+
+        @include breakpoint(md) {
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+        }
+
+        .title {
+            position: relative;
+
+            h1 {
+                position: absolute;
+                top: .25em;
+                left: 1em;
+                color: #FFFFFF;
+                text-shadow: 2px 2px $nmGray;
+                text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+                ;
+                transform: rotate(-4.81deg);
+                font-size: 2.5em;
+
+                @include breakpoint(sm) {
+                    font-size: 2em;
+                    top: 1.25em;
+                }
+
+                .sec-title {
+                    margin-left: 1em;
+                }
+
+            }
+        }
+
+        .img-content {
+            @include breakpoint(sm) {
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            svg {
+                @include breakpoint(sm) {
+                    width: 80%;
+                    height: 80%;
+                }
+            }
+        }
+    }
+}
+
+.block01 {
+    .search {
+        margin-bottom: 30px;
+
+        span {
+            display: inline-block;
+            width: 1em;
+            height: auto;
+        }
+    }
+
+
+
+
+}
+
+.block02 {
+    .sort {
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include breakpoint(md) {
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+
+
+
+        .note {
+            color: $nmAlert;
+            
+
+            @include breakpoint(md) {
+                margin-bottom: 15px;
+                font-size: .8em;
+                width: 100%;
+            }
+        }
+
+        .sort-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            @include breakpoint(md) {
+                justify-content: flex-end;
+                width: 100%;
+            }
+
+            select {
+                width: 250px;
+            }
+        }
+    }
+
+}
+
+.block03 {
+
+    .item-title {
+        padding: 1em 0;
+        display: flex;
+        align-items: flex-end;
+        border-top: 1px solid rgba($nmGray, $alpha: .25);
+
+        @include breakpoint(md) {
+            display: none;
+        }
+
+        p {
+            margin-left: 5px;
+            margin-bottom: 0;
+            position: relative;
+
+            &:before {
+                content: " ";
+                position: absolute;
+                left: -20px;
+                width: 15px;
+                height: 25px;
+                background-color: $nmYellow;
+            }
+        }
+    }
+}
+
+.block04 {
+    background-color: rgba($nmYellow, $alpha: .25);
+    position: relative;
+
+    .item-content-group {
+        padding-top: 30px;
+    }
+    .desc {
+        padding-right: 15px;
+    padding-left: 15px;
+    margin-bottom: 0px;
+        @include breakpoint(md) {
+            margin-bottom: 10px;
+        }
+    }
+
+
+    a.item {
+
+        color: $gray-700;
+
+        &:focus {
+            color: $gray-700;
+        }
+
+        &:hover {
+            color: $gray-700;
+        }
+
+        &:active {
+            color: $gray-700;
+        }
+
+
+        .item-content {
+            background-color: white;
+            border: 1px solid $nmGray;
+            border-radius: 4px;
+            padding: 1em 0;
+
+            .number {
+                font-size: 3em;
+                font-weight: 300;
+                display: flex;
+                align-items: flex-end;
+
+                p {
+                    margin-bottom: 0;
+                    display: flex;
+                    align-self: center;
+                }
+
+                span {
+                    display: none;
+
+                    @include breakpoint(md) {
+                        background-color: $nmYellow;
+                        border-radius: 100px;
+                        width: 30px;
+                        height: 30px;
+                        font-size: 12px;
+                        font-weight: bold;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-top: 30px;
+                        margin-right: 5px;
+                    }
+                }
+            }
+
+
+            .map {
+                display: flex;
+                align-items: center;
+
+                svg {
+                    width: 30px;
+                    height: 30px;
+                    margin: 1em 0;
+                }
+            }
+        }
+
+    }
+}
+
+footer {
+    text-align: center;
+    color: $nmGray;
+    font-weight: 300;
+    font-size: .85em;
+    padding: 30px;
+    background-color: rgba($nmYellow, $alpha: .25);
+ }
