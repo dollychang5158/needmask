@@ -59,7 +59,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Need Mask" />
       <>
         <div className="container block01">
           <div className="search">

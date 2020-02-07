@@ -5,8 +5,9 @@ module.exports = {
     description: `Need Mask.`,
     siteUrl: `https://dollychang5158.github.io/needmask/`,
     url: `https://dollychang5158.github.io/needmask/`,
-    author: `@dolly`,
-    keywords: [`口罩`]
+    author: `dolly`,
+    keywords: [`口罩`],
+    image: `share.png`,
   },plugins: [
     `gatsby-plugin-react-helmet`,
     {
