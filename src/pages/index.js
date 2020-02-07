@@ -31,7 +31,11 @@ const IndexPage = () => {
   }, 1000 * 60 * 2)
 
   const matchedAreaHospitals = filterHospitals(hospitals, city + area, sortBy)
-  const matchedHospitals = filterHospitals(hospitals, city + area + street, sortBy)
+  const matchedHospitals = filterHospitals(
+    hospitals,
+    city + area + street,
+    sortBy
+  )
 
   const streets = [
     ...new Set(
@@ -109,7 +113,7 @@ const IndexPage = () => {
         </div>
 
         <div className="block04">
-          <div className="container item-content-group">
+          <div id="wrapped" className="container item-content-group">
             {matchedHospitals.map((hospital, index) => (
               <ListItem
                 key={index}

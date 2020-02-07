@@ -8,7 +8,7 @@ const DropDown = ({ placeHolder, current, values, onChange, sm }) => (
       onChange(event.target.value)
     }}
   >
-    {placeHolder && <option value="" selected disabled hidden></option>}
+    {placeHolder && <option value="" disabled hidden></option>}
     {values.map(value => (
       <option key={value} value={value}>
         {value}
