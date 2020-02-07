@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
 import { SORT_BY_TOTAL, SORT_ARRAY, sortFn, filterHospitals } from "../lib/sort"
+import LoadMore from "../components/load-more-view"
 
 const IndexPage = () => {
   const [hospitals, setHospitals] = useState([])
@@ -61,6 +62,12 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <>
+        <LoadMore
+            wrappedId={"wrapped"}
+            onLoadMore={() => {
+              console.log("onLoadMore")
+            }}
+          />
         <div className="container block01">
           <div className="search">
             <p>點擊位置，尋找你/妳的口罩：</p>
