@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/needmask/public/",
   siteMetadata: {
     title: `Need Mask`,
     description: `Need Mask.`,
@@ -22,7 +23,7 @@ module.exports = {
       options: {
         name: `gatsby-starter-default`,
         short_name: `starter`,
-        start_url: `/needmask/public/`,
+        start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
