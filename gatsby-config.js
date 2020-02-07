@@ -1,10 +1,10 @@
 module.exports = {
-  pathPrefix: "/needmask/public/",
+  pathPrefix: "/needmask/",
   siteMetadata: {
     title: `Need Mask`,
     description: `Need Mask.`,
-    siteUrl: `https://dollychang5158.github.io/needmask/public/`,
-    url: `https://dollychang5158.github.io/needmask/public/`,
+    siteUrl: `https://dollychang5158.github.io/needmask/`,
+    url: `https://dollychang5158.github.io/needmask/`,
     author: `@dolly`,
     keywords: [`口罩`]
   },plugins: [
