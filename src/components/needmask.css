@@ -69,7 +69,7 @@ body {
   margin: 0;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 475px) {
   body {
     line-height: 2;
     font-weight: 300;
@@ -427,7 +427,7 @@ select:hover {
   font-size: 2.5em;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 475px) {
   .keyview .kv-content .title h1 {
     font-size: 2em;
     top: 1.25em;
@@ -438,7 +438,7 @@ select:hover {
   margin-left: 1em;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 475px) {
   .keyview .kv-content .img-content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -449,7 +449,7 @@ select:hover {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 475px) {
   .keyview .kv-content .img-content svg {
     width: 80%;
     height: 80%;
@@ -476,7 +476,7 @@ select:hover {
           flex: 1;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 475px) {
   .block01 .search .select-group select {
     margin-right: 5px;
   }
@@ -500,7 +500,7 @@ select:hover {
   height: auto;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 475px) {
   .block01 .search span {
     width: 0;
   }
@@ -510,7 +510,7 @@ select:hover {
   margin-top: 30px;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 475px) {
   .block02 .sort {
     margin-bottom: 15px;
   }
@@ -552,7 +552,7 @@ select:hover {
           box-shadow: initial;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 475px) {
   .block02 .sort .sort-item select {
     max-width: 100px;
     font-size: 1em;
@@ -599,7 +599,7 @@ select:hover {
   padding-top: 30px;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 475px) {
   .block04 .title {
     font-size: 1.5em;
   }
@@ -617,7 +617,7 @@ select:hover {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 475px) {
   .block04 .desc {
     margin-bottom: 0px;
     font-size: .8em;
@@ -648,7 +648,7 @@ select:hover {
   padding: 1em 0;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 475px) {
   .block04 a.item .item-content {
     border: initial;
     border-radius: initial;
@@ -672,7 +672,7 @@ select:hover {
           align-items: flex-end;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 475px) {
   .block04 a.item .item-content .detail .number {
     font-size: 2em;
   }
@@ -713,7 +713,7 @@ select:hover {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 475px) {
   .block04 a.item .item-content .detail .number span {
     margin-top: 10px;
   }
@@ -734,10 +734,14 @@ select:hover {
   margin: 1em 0;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 475px) {
   .block04 a.item .item-content .detail .map svg {
     margin: 0;
   }
+}
+
+.block04 a.item .item-content .hide {
+  display: none;
 }
 
 .block04 a.item .item-content .time .title {
@@ -745,7 +749,7 @@ select:hover {
   padding-right: 0;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 475px) {
   .block04 a.item .item-content .time .title {
     font-size: 1em;
   }
@@ -761,7 +765,7 @@ select:hover {
   width: 30px;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 475px) {
   .block04 .item-bottom-space {
     height: 15px;
   }

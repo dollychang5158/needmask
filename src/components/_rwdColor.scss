@@ -1,7 +1,7 @@
 //RWD setting//
 $lg: 1024px;
 $md: 768px;
-$sm: 425px;
+$sm: 475px;
 
 @mixin breakpoint($point) {
     @if $point==lg {
