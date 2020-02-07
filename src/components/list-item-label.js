@@ -1,5 +1,4 @@
 import React from "react"
-// import YellowBox from "./yellow-box"
 
 export default () => (
   <div className="row item-title">
