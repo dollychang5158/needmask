@@ -1,11 +1,13 @@
-import React, {memo} from 'react'
-const DropDown = ({ current, values, onChange }) => (
+import React, { memo } from "react"
+const DropDown = ({ placeHolder, current, values, onChange, sm }) => (
   <select
-    className="custom-select custom-select-lg col-lg-4 col-5"
+    value={current}
+    className={"custom-select custom-select-lg "+(sm?"col-lg-4":"col-lg-3")}
     onChange={event => {
       onChange(event.target.value)
     }}
   >
+    {placeHolder && <option value="" selected disabled hidden></option>}
     {values.map(value => (
       <option key={value} value={value}>
         {value}

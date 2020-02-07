@@ -6,31 +6,15 @@ import DropDown from "../components/dropdown"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
-
-const SORT_BY_TOTAL = "總數"
-const SORT_BY_ADULT = "成人"
-const SORT_BY_CHILD = "兒童"
-const SORT_ARRAY = [SORT_BY_TOTAL,SORT_BY_ADULT, SORT_BY_CHILD]
+import { SORT_BY_CHILD, SORT_ARRAY, sortFn } from "../lib/sort"
 
 const IndexPage = () => {
   const [hospitals, setHospitals] = useState([])
   const [city, setCity] = useState("台北市")
   const [area, setArea] = useState("中正區")
+  const [street, setStreet] = useState("")
   const [sortBy, setSort] = useState(SORT_BY_CHILD)
   const [times, setTimes] = useState(0)
-
-  const sortFn = (a, b) => {
-    if (sortBy === SORT_BY_ADULT) {
-      return a.properties.mask_adult > b.properties.mask_adult ? -1 : 1
-    } else if (sortBy === SORT_BY_CHILD) {
-      return a.properties.mask_child > b.properties.mask_child ? -1 : 1
-    } else if (sortBy === SORT_BY_TOTAL) {
-      return a.properties.mask_adult + a.properties.mask_child >
-        b.properties.mask_adult + b.properties.mask_child
-        ? -1
-        : 1
-    }
-  }
 
   useEffect(() => {
     console.log("fetch")
@@ -45,64 +29,107 @@ const IndexPage = () => {
 
   setTimeout(() => {
     setTimes(times + 1)
-  }, 2000 * 60 * 2)
+  }, 1000 * 60 * 2)
 
-  const matchedHospitals = hospitals
+  console.log("constrant = " + (city + area + street))
+  const matchedAreaHospitals = hospitals
     .filter(hospital => {
       return hospital.properties.address.indexOf(city + area) !== -1
     })
-    .sort(sortFn)
+    .sort(sortFn(sortBy))
+
+  const matchedHospitals = hospitals.filter(hospital => {
+    return hospital.properties.address.indexOf(city + area + street) !== -1
+  })
+
+  const streets = [
+    ...new Set(
+      matchedAreaHospitals.map(hospital => {
+        const start = (city + area).length
+        return hospital.properties.address.substring(start, start + 3)
+      })
+    ),
+  ]
+
+  console.log(streets)
 
   const handleCityChange = city => {
     setCity(city)
     setArea(cities[city][0])
+    setStreet("")
+  }
+
+  const handleAreaChange = area => {
+    setArea(area)
+    setStreet("")
   }
 
   return (
     <Layout>
       <SEO title="Home" />
       <>
-      <div className="container block01">
-        <div className="search">
-          <p>點擊位置，尋找你/妳的口罩：</p>
-          <DropDown
-            current={city}
-            onChange={handleCityChange}
-            values={Object.keys(cities)}
-          />
-          <span />
-          <DropDown current={area} onChange={setArea} values={cities[city]} />
-        </div>
-      </div>
-
-      <div className="container block02">
-        <div className="sort">
-          <div className="note"><p>＊資料每兩分鐘更新一次，預設排序為剩餘口罩數量總加數量 多>少。</p></div>
-          <div className="sort-item">
-            <p>排序：</p>
-            <DropDown current={sortBy} onChange={setSort} values={SORT_ARRAY} />
+        <div className="container block01">
+          <div className="search">
+            <p>點擊位置，尋找你/妳的口罩：</p>
+            <DropDown
+              placeHolder
+              current={city}
+              onChange={handleCityChange}
+              values={Object.keys(cities)}
+            />
+            <span />
+            <DropDown
+              placeHolder
+              current={area}
+              onChange={handleAreaChange}
+              values={cities[city]}
+            />
+            <span />
+            <DropDown
+              placeHolder
+              current={street}
+              onChange={setStreet}
+              values={streets}
+            />
           </div>
         </div>
-      </div>
 
-      <div className="container block03">
-        <ListItemLabel />
-      </div>
-
-      <div className="block04">
-        <div className="container item-content-group">
-          {matchedHospitals.map((hospital, index) => (
-            <ListItem
-              key={index}
-              properties={hospital.properties}
-              coordinates={hospital.geometry.coordinates}
-            />
-          ))}
+        <div className="container block02">
+          <div className="sort">
+            <div className="note">
+              <p>
+                ＊資料每兩分鐘更新一次，預設排序為剩餘口罩數量總加數量 多>少。
+              </p>
+            </div>
+            <div className="sort-item">
+              <p>排序：</p>
+              <DropDown
+                sm
+                current={sortBy}
+                onChange={setSort}
+                values={SORT_ARRAY}
+              />
+            </div>
+          </div>
         </div>
-      </div>
 
+        <div className="container block03">
+          <ListItemLabel />
+        </div>
+
+        <div className="block04">
+          <div className="container item-content-group">
+            {matchedHospitals.map((hospital, index) => (
+              <ListItem
+                key={index}
+                properties={hospital.properties}
+                coordinates={hospital.geometry.coordinates}
+              />
+            ))}
+          </div>
+        </div>
       </>
-    </Layout >
+    </Layout>
   )
 }
 
