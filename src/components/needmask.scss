@@ -147,7 +147,7 @@ select{
                 justify-content: flex-end;
             }
 
-            svg {
+            img {
                 @include breakpoint(sm) {
                     width: 80%;
                     height: 80%;

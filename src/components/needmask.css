@@ -450,7 +450,7 @@ select:hover {
 }
 
 @media screen and (max-width: 475px) {
-  .keyview .kv-content .img-content svg {
+  .keyview .kv-content .img-content img {
     width: 80%;
     height: 80%;
   }
