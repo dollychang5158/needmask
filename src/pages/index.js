@@ -6,14 +6,14 @@ import DropDown from "../components/dropdown"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
-import { SORT_BY_CHILD, SORT_ARRAY, sortFn } from "../lib/sort"
+import { SORT_BY_TOTAL, SORT_ARRAY, sortFn } from "../lib/sort"
 
 const IndexPage = () => {
   const [hospitals, setHospitals] = useState([])
   const [city, setCity] = useState("台北市")
   const [area, setArea] = useState("中正區")
   const [street, setStreet] = useState("")
-  const [sortBy, setSort] = useState(SORT_BY_CHILD)
+  const [sortBy, setSort] = useState(SORT_BY_TOTAL)
   const [times, setTimes] = useState(0)
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const IndexPage = () => {
 
   const matchedHospitals = hospitals.filter(hospital => {
     return hospital.properties.address.indexOf(city + area + street) !== -1
-  })
+  }).sort(sortFn(sortBy))
 
   const streets = [
     ...new Set(
@@ -50,12 +50,14 @@ const IndexPage = () => {
   ]
 
   const handleCityChange = city => {
+    console.log('handleCityChange')
     setCity(city)
     setArea(cities[city][0])
     setStreet("")
   }
 
   const handleAreaChange = area => {
+    console.log('handleAreaChange')
     setArea(area)
     setStreet("")
   }

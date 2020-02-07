@@ -4,6 +4,7 @@ const SORT_BY_CHILD = "兒童"
 const SORT_ARRAY = [SORT_BY_TOTAL, SORT_BY_ADULT, SORT_BY_CHILD]
 
 const sortFn = (sortBy) => (a, b) => {
+  console.log('sortFn = '+sortBy)
   if (sortBy === SORT_BY_ADULT) {
     return a.properties.mask_adult > b.properties.mask_adult ? -1 : 1
   } else if (sortBy === SORT_BY_CHILD) {
