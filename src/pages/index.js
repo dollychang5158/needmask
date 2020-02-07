@@ -50,14 +50,12 @@ const IndexPage = () => {
   ]
 
   const handleCityChange = city => {
-    console.log('handleCityChange')
     setCity(city)
     setArea(cities[city][0])
     setStreet("")
   }
 
   const handleAreaChange = area => {
-    console.log('handleAreaChange')
     setArea(area)
     setStreet("")
   }
