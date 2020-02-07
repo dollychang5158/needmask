@@ -6,7 +6,7 @@ import DropDown from "../components/dropdown"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
-import { SORT_BY_TOTAL, SORT_ARRAY, sortFn } from "../lib/sort"
+import { SORT_BY_TOTAL, SORT_ARRAY, sortFn, filterHospitals } from "../lib/sort"
 
 const IndexPage = () => {
   const [hospitals, setHospitals] = useState([])
@@ -30,15 +30,8 @@ const IndexPage = () => {
     setTimes(times + 1)
   }, 1000 * 60 * 2)
 
-  const matchedAreaHospitals = hospitals
-    .filter(hospital => {
-      return hospital.properties.address.indexOf(city + area) !== -1
-    })
-    .sort(sortFn(sortBy))
-
-  const matchedHospitals = hospitals.filter(hospital => {
-    return hospital.properties.address.indexOf(city + area + street) !== -1
-  }).sort(sortFn(sortBy))
+  const matchedAreaHospitals = filterHospitals(hospitals, city + area, sortBy)
+  const matchedHospitals = filterHospitals(hospitals, city + area + street, sortBy)
 
   const streets = [
     ...new Set(
