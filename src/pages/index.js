@@ -17,7 +17,6 @@ const IndexPage = () => {
   const [times, setTimes] = useState(0)
 
   useEffect(() => {
-    console.log("fetch")
     fetch(
       "https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json"
     )
@@ -31,7 +30,6 @@ const IndexPage = () => {
     setTimes(times + 1)
   }, 1000 * 60 * 2)
 
-  console.log("constrant = " + (city + area + street))
   const matchedAreaHospitals = hospitals
     .filter(hospital => {
       return hospital.properties.address.indexOf(city + area) !== -1
@@ -50,8 +48,6 @@ const IndexPage = () => {
       })
     ),
   ]
-
-  console.log(streets)
 
   const handleCityChange = city => {
     setCity(city)
