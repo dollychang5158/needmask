@@ -3,7 +3,6 @@ const DropDown = ({ placeHolder, current, values, onChange, sm }) => (
   <select
     value={current}
     className={"custom-select custom-select-lg"}
-    // +(sm?"col-lg-4":"col-3")
     onChange={event => {
       onChange(event.target.value)
     }}

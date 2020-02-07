@@ -5,9 +5,11 @@ import { cities } from "../lib/cities"
 import DropDown from "../components/dropdown"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Link } from "gatsby"
-import { SORT_BY_TOTAL, SORT_ARRAY, sortFn, filterHospitals } from "../lib/sort"
-import LoadMore from "../components/load-more-view"
+import { SORT_BY_TOTAL, SORT_ARRAY, filterHospitals } from "../lib/sort"
+import LoadMore from "../components/load-more"
+
+const INIT_MAX_ITEM = 5
+const STEP = 5
 
 const IndexPage = () => {
   const [hospitals, setHospitals] = useState([])
@@ -16,6 +18,7 @@ const IndexPage = () => {
   const [street, setStreet] = useState("")
   const [sortBy, setSort] = useState(SORT_BY_TOTAL)
   const [times, setTimes] = useState(0)
+  const [maxItem, setMaxItem] = useState(INIT_MAX_ITEM)
 
   useEffect(() => {
     fetch(
@@ -51,23 +54,19 @@ const IndexPage = () => {
     setCity(city)
     setArea(cities[city][0])
     setStreet("")
+    setMaxItem(INIT_MAX_ITEM)
   }
 
   const handleAreaChange = area => {
     setArea(area)
     setStreet("")
+    setMaxItem(INIT_MAX_ITEM)
   }
 
   return (
     <Layout>
       <SEO title="Home" />
       <>
-        <LoadMore
-            wrappedId={"wrapped"}
-            onLoadMore={() => {
-              console.log("onLoadMore")
-            }}
-          />
         <div className="container block01">
           <div className="search">
             <p>點擊位置，尋找你/妳的口罩：</p>
@@ -120,14 +119,20 @@ const IndexPage = () => {
         </div>
 
         <div className="block04">
-          <div id="wrapped" className="container item-content-group">
-            {matchedHospitals.map((hospital, index) => (
-              <ListItem
-                key={index}
-                properties={hospital.properties}
-                coordinates={hospital.geometry.coordinates}
-              />
-            ))}
+          <div className="container item-content-group">
+            <LoadMore
+              data={matchedHospitals}
+              maxItem={maxItem}
+              step={STEP}
+              onChange={setMaxItem}
+              renderItem={(hospital, index) => (
+                <ListItem
+                  key={index}
+                  properties={hospital.properties}
+                  coordinates={hospital.geometry.coordinates}
+                />
+              )}
+            />
           </div>
         </div>
       </>

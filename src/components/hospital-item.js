@@ -27,10 +27,6 @@ const ListItem = ({ coordinates, properties }) => (
           <div className="col-lg-5 col-5 number child"><p><span>兒童</span>{properties.mask_child}</p></div>
           <div className="col-lg-2 col-2 map"><MapIcon/></div>
         </div>
-        <div className="container time hide">
-          <p className="col title">營業時間:</p>
-          <p className="col desc">週一～週日：9:00~18:00{properties.time}</p>
-        </div>
       </div>
     </a>
     <span className="item-bottom-space" />
