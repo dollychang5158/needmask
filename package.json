@@ -1,9 +1,10 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "needmask",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "needmask",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Dolly Chang <dollychang5159@gmail.com>",
+  "homepage": "https://github.com/dollychang5158/needmask",
   "dependencies": {
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
