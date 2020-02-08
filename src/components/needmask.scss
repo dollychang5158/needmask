@@ -39,8 +39,6 @@ select{
             color: $nmGray;
             position: relative;
 
-            
-
             .close {
                 align-self: flex-end;
                 display: block;
@@ -80,12 +78,29 @@ select{
                     transform: rotate(45deg);
                 }
             }
+            h2{
+                position: relative;
+                &:after{
+                    content: " ";
+                    width: 20px;
+                    height: 5px;
+                    background-color: #FFC500;
+                    position: absolute;
+                    bottom: 15px;
+                    left: -25px;
+                }
+            }
 
             p {
                 font-size: .85em;
                 font-weight: 300;
+                span{
+                    font-weight: 600;
+                }
             }
-
+            a{
+                cursor: pointer;
+            }
             ul{
                 display: flex;
                 padding: 0;
@@ -129,6 +144,8 @@ select{
                 }
             }
         }
+
+        
     }
 }
 
@@ -190,15 +207,61 @@ select{
         margin-bottom: 30px;
         max-width: 800px;
         margin: 30px auto;
+        .select-ring-wrap{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+
+            @include breakpoint(sm){
+                flex-direction: column-reverse;
+                height: 53.75px;
+            }
+        }
         .select-group{
             display: flex;
             flex-wrap: wrap;
+            flex: 4;
+            @include breakpoint(sm){
+                flex: initial;
+                width: 100%;
+            }
             select{
                 flex:1;
                 @include breakpoint(sm){
                     margin-right: 5px;  
                    }
             }
+        }
+        .ring-item{
+            flex: 1;
+            @include breakpoint(sm){
+                flex: initial;
+                display: flex;
+                justify-content: flex-end;
+            }
+            a,a:link,a:active{
+                display: block;
+                margin: 0 auto;
+                width: fit-content;
+                position: relative;
+                width: 100%;
+                max-width: 53.75px;
+                min-width: 53.75px;
+                @include breakpoint(sm){
+                    margin: initial;
+                    margin-bottom: 15px;
+                }
+                .number{
+                    position: absolute;
+                    right: -10px;
+                    top: -10px;
+                    background-color: $nmAlert;
+                    padding: 5px 12.5px;
+                    border-radius: 30px;
+                    color: white;
+                }
+            }
+            
         }
 
         .note {

@@ -2,21 +2,35 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-const RingImg = () => {
+
+const Ring = () => {
   const data = useStaticQuery(graphql`
     query {
-      Image: file(relativePath: { eq: "ring.png" }) {
+      ringRead: file(relativePath: { eq: "ring-read.png" }) {
         childImageSharp {
-          fixed(width: 76) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 76) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+
+      ring: file(relativePath: { eq: "ring.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 76) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
     }
   `)
-  return <Img fixed={data.Image.childImageSharp.fixed} />
-}
-const Ring = () => {
+
+  const RingImg = () => {
+    return <Img fluid={data.ring.childImageSharp.fluid} />
+  }
+
+  const RingReadImg = () => {
+    return <Img fluid={data.ringRead.childImageSharp.fluid} />
+  }
   const [isRead, setRead] = useState(false)
   const handleClick = () => setRead(true)
   return (
@@ -27,10 +41,9 @@ const Ring = () => {
         modal: true,
       }}
     >
-      <div>
-        <RingImg />
-        <div>{isRead ? "" : "3"}</div>
-      </div>
+
+
+      {isRead ? <><RingReadImg /></> : <><RingImg /><div className="number">3</div></>}
     </Link>
   )
 }

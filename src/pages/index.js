@@ -79,33 +79,30 @@ const IndexPage = () => {
         <div className="container block01">
           <div className="search">
             <p>點擊位置，尋找你/妳的口罩：</p>
-            <div className="select-group">
-              <DropDown
-                placeHolder
-                current={city}
-                onChange={handleCityChange}
-                values={Object.keys(cities)}
-              />
-              <span />
-              <DropDown
-                placeHolder
-                current={area}
-                onChange={handleAreaChange}
-                values={cities[city]}
-              />
-              <span />
-              <DropDown
-                placeHolder
-                current={street}
-                onChange={setStreet}
-                values={streets}
-              />
-              <Ring/>
-            </div>
-            <div className="note">
-              <p>
-                ＊資料每兩分鐘更新一次，預設排序為該區剩餘口罩總計數量 多 > 少。
-              </p>
+            <div className="select-ring-wrap">
+              <div className="select-group">
+                <DropDown
+                  placeHolder
+                  current={city}
+                  onChange={handleCityChange}
+                  values={Object.keys(cities)}
+                />
+                <span />
+                <DropDown
+                  placeHolder
+                  current={area}
+                  onChange={handleAreaChange}
+                  values={cities[city]}
+                />
+                <span />
+                <DropDown
+                  placeHolder
+                  current={street}
+                  onChange={setStreet}
+                  values={streets}
+                />
+              </div>
+              <div className="ring-item"><Ring /></div>
             </div>
           </div>
         </div>

@@ -364,9 +364,31 @@ select:hover {
           transform: rotate(45deg);
 }
 
+.ReactModal__Overlay .ReactModal__Content .content h2 {
+  position: relative;
+}
+
+.ReactModal__Overlay .ReactModal__Content .content h2:after {
+  content: " ";
+  width: 20px;
+  height: 5px;
+  background-color: #FFC500;
+  position: absolute;
+  bottom: 15px;
+  left: -25px;
+}
+
 .ReactModal__Overlay .ReactModal__Content .content p {
   font-size: .85em;
   font-weight: 300;
+}
+
+.ReactModal__Overlay .ReactModal__Content .content p span {
+  font-weight: 600;
+}
+
+.ReactModal__Overlay .ReactModal__Content .content a {
+  cursor: pointer;
 }
 
 .ReactModal__Overlay .ReactModal__Content .content ul {
@@ -489,12 +511,44 @@ select:hover {
   margin: 30px auto;
 }
 
+.block01 .search .select-ring-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 475px) {
+  .block01 .search .select-ring-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    height: 53.75px;
+  }
+}
+
 .block01 .search .select-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+}
+
+@media screen and (max-width: 475px) {
+  .block01 .search .select-group {
+    -webkit-box-flex: initial;
+        -ms-flex: initial;
+            flex: initial;
+    width: 100%;
+  }
 }
 
 .block01 .search .select-group select {
@@ -507,6 +561,55 @@ select:hover {
   .block01 .search .select-group select {
     margin-right: 5px;
   }
+}
+
+.block01 .search .ring-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+@media screen and (max-width: 475px) {
+  .block01 .search .ring-item {
+    -webkit-box-flex: initial;
+        -ms-flex: initial;
+            flex: initial;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+.block01 .search .ring-item a, .block01 .search .ring-item a:link, .block01 .search .ring-item a:active {
+  display: block;
+  margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  width: 100%;
+  max-width: 53.75px;
+  min-width: 53.75px;
+}
+
+@media screen and (max-width: 475px) {
+  .block01 .search .ring-item a, .block01 .search .ring-item a:link, .block01 .search .ring-item a:active {
+    margin: initial;
+    margin-bottom: 15px;
+  }
+}
+
+.block01 .search .ring-item a .number, .block01 .search .ring-item a:link .number, .block01 .search .ring-item a:active .number {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  background-color: #9D2D2D;
+  padding: 5px 12.5px;
+  border-radius: 30px;
+  color: white;
 }
 
 .block01 .search .note {
