@@ -152,7 +152,9 @@ select{
 
         .title {
             position: relative;
-
+            width: 100%;
+            max-width: 500px;
+            min-width: 300px;
             h1 {
                 position: absolute;
                 top: .25em;
@@ -166,7 +168,6 @@ select{
 
                 @include breakpoint(sm) {
                     font-size: 2em;
-                    top: 1.25em;
                 }
 
                 .sec-title {
@@ -177,17 +178,9 @@ select{
         }
 
         .img-content {
-            @include breakpoint(sm) {
-                display: flex;
-                justify-content: flex-end;
-            }
-
-            img {
-                @include breakpoint(sm) {
-                    width: 80%;
-                    height: 80%;
-                }
-            }
+            width: 100%;
+            max-width: 430px;
+            min-width: 270px;
         }
     }
 }
