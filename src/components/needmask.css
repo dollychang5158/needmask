@@ -285,8 +285,46 @@ select:hover {
   margin: 0 auto;
 }
 
+@-webkit-keyframes infoAni {
+  0% {
+    opacity: 1;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+  }
+  50% {
+    opacity: .5;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+  }
+}
+
+@keyframes infoAni {
+  0% {
+    opacity: 1;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+  }
+  50% {
+    opacity: .5;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+  }
+}
+
 .narbar-content a {
   display: block;
+  -webkit-animation: infoAni infinite 4s;
+          animation: infoAni infinite 4s;
 }
 
 .ReactModal__Overlay {
@@ -632,6 +670,85 @@ select:hover {
     max-width: 43.75px;
     min-width: 43.75px;
   }
+}
+
+@-webkit-keyframes ringShake {
+  0% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+    -webkit-transition: all .4s;
+    transition: all .4s;
+  }
+  25% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+    -webkit-transition: all .4s;
+    transition: all .4s;
+  }
+  50% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+    -webkit-transition: all .4s;
+    transition: all .4s;
+  }
+  75% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+    -webkit-transition: all .4s;
+    transition: all .4s;
+  }
+  100% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+    -webkit-transition: all .4s;
+    transition: all .4s;
+  }
+}
+
+@keyframes ringShake {
+  0% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+    -webkit-transition: all .4s;
+    transition: all .4s;
+  }
+  25% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+    -webkit-transition: all .4s;
+    transition: all .4s;
+  }
+  50% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+    -webkit-transition: all .4s;
+    transition: all .4s;
+  }
+  75% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+    -webkit-transition: all .4s;
+    transition: all .4s;
+  }
+  100% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+    -webkit-transition: all .4s;
+    transition: all .4s;
+  }
+}
+
+.block01 .search .ring-item a .ring-img:hover,
+.block01 .search .ring-item a:link .ring-img:hover,
+.block01 .search .ring-item a:active .ring-img:hover {
+  opacity: .8;
+}
+
+.block01 .search .ring-item a .ring-img .gatsby-image-wrapper,
+.block01 .search .ring-item a:link .ring-img .gatsby-image-wrapper,
+.block01 .search .ring-item a:active .ring-img .gatsby-image-wrapper {
+  -webkit-animation: ringShake infinite .8s ease-in-out;
+          animation: ringShake infinite .8s ease-in-out;
 }
 
 .block01 .search .ring-item a .number,

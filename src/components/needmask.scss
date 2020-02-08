@@ -18,9 +18,26 @@ select {
     display: flex;
     width: 100%;
     margin: 0 auto;
+    @keyframes infoAni {
+        0% {
+            opacity: 1;
+          transition: all .4s;
+        }
+
+        50% {
+            opacity: .5;
+          transition: all .4s;
+        }
+
+        100% {
+            opacity: 1;
+          transition: all .4s;
+        }
+    }
 
     a {
         display: block;
+        animation: infoAni infinite 4s ;
     }
 }
 
@@ -293,6 +310,42 @@ select {
                     margin-bottom: 15px;
                     max-width: 43.75px;
                 min-width: 43.75px;
+                }
+                @keyframes ringShake {
+                    0% {
+                        transform: rotate(-5deg);
+                      transition: all .4s;
+                    }
+            
+                    25% {
+                        transform: rotate(10deg);
+                      transition: all .4s;
+                    }
+            
+                    50% {
+
+                        transform: rotate(-5deg);
+                      transition: all .4s;
+                    }
+            
+                    75% {
+
+                        transform: rotate(5deg);
+                      transition: all .4s;
+                    }
+            
+                    100% {
+                        transform: rotate(-5deg);
+                      transition: all .4s;
+                    }
+                  }
+                .ring-img{
+                    &:hover{
+                        opacity: .8;
+                    }
+                    .gatsby-image-wrapper{
+                        animation: ringShake infinite .8s ease-in-out;
+                    }
                 }
 
                 .number {

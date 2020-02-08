@@ -1,12 +1,12 @@
 module.exports = {
   pathPrefix: "/needmask/",
   siteMetadata: {
-    title: `Need Mask`,
-    description: `Need Mask.`,
+    title: `Need Mask | 口罩偵探`,
+    description: `Need Mask | 口罩偵探:幫你快速列出地區口罩剩餘數量列表的好夥伴。`,
     siteUrl: `https://dollychang5158.github.io/needmask/`,
     url: `https://dollychang5158.github.io/needmask/`,
     author: `dolly`,
-    keywords: [`口罩`,`武漢肺炎`,`NeedMask`,`needmask`,`need`,`mask`,`呼吸道`,`洗手`,`口罩數量`],
+    keywords: [`口罩`,`口罩偵探`,`武漢肺炎`,`NeedMask`,`needmask`,`need`,`mask`,`呼吸道`,`洗手`,`口罩數量`],
     image: `share.png`,
   },plugins: [
     `gatsby-plugin-react-helmet`,

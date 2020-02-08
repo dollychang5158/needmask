@@ -43,7 +43,7 @@ const Ring = () => {
     >
 
 
-      {isRead ? <><RingReadImg /></> : <><RingImg /><div className="number">3</div></>}
+      {isRead ? <div className="ring-read-img"><RingReadImg /></div> : <div className="ring-img"><RingImg /><div className="number">3</div></div>}
     </Link>
   )
 }

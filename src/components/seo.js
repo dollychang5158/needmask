@@ -37,7 +37,7 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -91,6 +91,7 @@ function SEO({ description, lang, meta, title }) {
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous"
       ></link>
+      <meta name="google-site-verification" content="C9hCSJK0xad_97zoKhE2JsvaEWKSQ9r51NoiXHnaE2A" />
     </Helmet>
   )
 }
