@@ -1,13 +1,13 @@
 @import "rwdColor";
 
 nav {
-    @include breakpoint(md){
+    @include breakpoint(md) {
         box-shadow: 0 0 10px rgba($nmGray, $alpha: .25);
     }
 }
 
-select{
-    &:hover{
+select {
+    &:hover {
         cursor: pointer;
     }
 }
@@ -78,9 +78,11 @@ select{
                     transform: rotate(45deg);
                 }
             }
-            h2{
+
+            h2 {
                 position: relative;
-                &:after{
+
+                &:after {
                     content: " ";
                     width: 20px;
                     height: 5px;
@@ -94,22 +96,28 @@ select{
             p {
                 font-size: .85em;
                 font-weight: 300;
-                span{
+
+                span {
                     font-weight: 600;
                 }
             }
-            a{
+
+            a {
                 cursor: pointer;
             }
-            ul{
+
+            ul {
                 display: flex;
                 padding: 0;
                 margin-left: 0;
-                li{
+
+                li {
                     flex: 1;
                     padding-right: 5px;
-                    
-                    a,a:link,a:active{
+
+                    a,
+                    a:link,
+                    a:active {
                         text-align: center;
                         color: white;
                         display: block;
@@ -118,26 +126,40 @@ select{
                     }
                 }
 
-                li:nth-child(1){
-                    a,a:link,a:active{
+                li:nth-child(1) {
+
+                    a,
+                    a:link,
+                    a:active {
                         background-color: #3b5998;
-                        &:hover{
+
+                        &:hover {
                             background-color: lighten(#3b5998, $amount: 10%);
                         }
                     }
                 }
-                li:nth-child(2){
-                    a,a:link,a:active{
+
+                li:nth-child(2) {
+
+                    a,
+                    a:link,
+                    a:active {
                         background-color: #e4405f;
-                        &:hover{
+
+                        &:hover {
                             background-color: lighten(#e4405f, $amount: 10%);
                         }
                     }
                 }
-                li:nth-child(3){
-                    a,a:link,a:active{
+
+                li:nth-child(3) {
+
+                    a,
+                    a:link,
+                    a:active {
                         background-color: #02b875;
-                        &:hover{
+
+                        &:hover {
                             background-color: lighten(#02b875, $amount: 10%);
                         }
                     }
@@ -145,7 +167,7 @@ select{
             }
         }
 
-        
+
     }
 }
 
@@ -172,6 +194,7 @@ select{
             width: 100%;
             max-width: 500px;
             min-width: 300px;
+
             h1 {
                 position: absolute;
                 top: .25em;
@@ -207,39 +230,49 @@ select{
         margin-bottom: 30px;
         max-width: 800px;
         margin: 30px auto;
-        .select-ring-wrap{
+
+        .select-ring-wrap {
             display: flex;
             width: 100%;
             justify-content: space-between;
 
-            @include breakpoint(sm){
+            @include breakpoint(sm) {
                 flex-direction: column-reverse;
                 height: 53.75px;
             }
         }
-        .select-group{
+
+        .select-group {
             display: flex;
             flex-wrap: wrap;
             flex: 4;
-            @include breakpoint(sm){
+
+            @include breakpoint(sm) {
                 flex: initial;
                 width: 100%;
             }
-            select{
-                flex:1;
-                @include breakpoint(sm){
-                    margin-right: 5px;  
-                   }
+
+            select {
+                flex: 1;
+
+                @include breakpoint(sm) {
+                    margin-right: 5px;
+                }
             }
         }
-        .ring-item{
+
+        .ring-item {
             flex: 1;
-            @include breakpoint(sm){
+
+            @include breakpoint(sm) {
                 flex: initial;
                 display: flex;
                 justify-content: flex-end;
             }
-            a,a:link,a:active{
+
+            a,
+            a:link,
+            a:active {
                 display: block;
                 margin: 0 auto;
                 width: fit-content;
@@ -247,37 +280,45 @@ select{
                 width: 100%;
                 max-width: 53.75px;
                 min-width: 53.75px;
-                @include breakpoint(sm){
+
+                @include breakpoint(sm) {
                     margin: initial;
                     margin-bottom: 15px;
+                    max-width: 43.75px;
+                min-width: 43.75px;
                 }
-                .number{
+
+                .number {
                     position: absolute;
                     right: -10px;
                     top: -10px;
-                    background-color: $nmAlert;
-                    padding: 5px 12.5px;
+                    background-color: #9D2D2D;
+                    padding: 2.5px 9px;
                     border-radius: 30px;
                     color: white;
+                    font-size: .8em;
+                    font-weight: 800;
                 }
             }
-            
+
         }
 
         .note {
             color: $nmAlert;
             font-size: .8em;
             margin-top: 15px;
+
             @include breakpoint(md) {
                 width: 100%;
             }
         }
-        
+
         span {
             display: inline-block;
             width: 1em;
             height: auto;
-            @include breakpoint(sm){
+
+            @include breakpoint(sm) {
                 width: 0;
             }
         }
@@ -292,14 +333,16 @@ select{
 
     .sort {
         margin-top: 30px;
-        @include breakpoint(sm){
+
+        @include breakpoint(sm) {
             margin-bottom: 15px;
         }
 
         p {
             margin-bottom: 0;
-            
+
         }
+
         .sort-item {
             display: flex;
             align-items: center;
@@ -314,10 +357,12 @@ select{
                 max-width: 120px;
                 border: initial;
                 color: $nmGray;
-                &:focus{
+
+                &:focus {
                     box-shadow: initial;
                 }
-                @include breakpoint(sm){
+
+                @include breakpoint(sm) {
                     max-width: 100px;
                     font-size: 1em;
                 }
@@ -360,11 +405,11 @@ select{
 .block04 {
     background-color: rgba($nmYellow, $alpha: .25);
     position: relative;
-    
-    .bg{
+
+    .bg {
         position: absolute;
         background-image: url('../images/bg.png');
-        top:0;
+        top: 0;
         left: 0;
         width: 100%;
         height: 100%;
@@ -374,15 +419,17 @@ select{
         padding-top: 30px;
     }
 
-    .title{
-        @include breakpoint(sm){
+    .title {
+        @include breakpoint(sm) {
             font-size: 1.5em;
         }
     }
+
     .desc {
         padding-right: 15px;
-    padding-left: 15px;
-    margin-bottom: 0px;
+        padding-left: 15px;
+        margin-bottom: 0px;
+
         @include breakpoint(md) {
             margin-bottom: 10px;
         }
@@ -416,31 +463,34 @@ select{
             border: 1px solid $nmGray;
             border-radius: 4px;
             padding: 1em 0;
-            @include breakpoint(sm){
+
+            @include breakpoint(sm) {
                 border: initial;
                 border-radius: initial;
             }
 
-            .detail{
+            .detail {
                 display: flex;
+
                 .number {
                     font-size: 3em;
                     font-weight: 300;
                     display: flex;
                     align-items: flex-end;
-                    @include breakpoint(sm){
+
+                    @include breakpoint(sm) {
                         font-size: 2em;
                     }
-    
+
                     p {
                         margin-bottom: 0;
                         display: flex;
                         align-self: center;
                     }
-    
+
                     span {
                         display: none;
-    
+
                         @include breakpoint(md) {
                             background-color: $nmYellow;
                             border-radius: 100px;
@@ -454,55 +504,60 @@ select{
                             margin-top: 30px;
                             margin-right: 5px;
                         }
-                        @include breakpoint(sm){
+
+                        @include breakpoint(sm) {
                             margin-top: 10px;
                         }
                     }
                 }
-    
-    
+
+
                 .map {
                     display: flex;
                     align-items: center;
-    
+
                     svg {
                         width: 30px;
                         height: 30px;
                         margin: 1em 0;
-                        @include breakpoint(sm){
+
+                        @include breakpoint(sm) {
                             margin: 0;
                         }
                     }
                 }
             }
 
-            .hide{
+            .hide {
                 display: none;
             }
 
-            .time{
-                
-                .title{
+            .time {
+
+                .title {
                     margin-bottom: 0;
                     padding-right: 0;
-                    @include breakpoint(sm){
+
+                    @include breakpoint(sm) {
                         font-size: 1em;
                     }
                 }
-                .desc{
+
+                .desc {
                     font-size: .8em;
                 }
             }
-            
+
         }
 
     }
 
-    .item-bottom-space{
+    .item-bottom-space {
         display: block;
         height: 30px;
         width: 30px;
-        @include breakpoint(sm){
+
+        @include breakpoint(sm) {
             height: 15px;
         }
     }
@@ -515,4 +570,4 @@ footer {
     font-size: .85em;
     padding: 30px;
     background-color: rgba($nmYellow, $alpha: .25);
- }
+}

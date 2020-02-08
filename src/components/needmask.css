@@ -406,7 +406,9 @@ select:hover {
   padding-right: 5px;
 }
 
-.ReactModal__Overlay .ReactModal__Content .content ul li a, .ReactModal__Overlay .ReactModal__Content .content ul li a:link, .ReactModal__Overlay .ReactModal__Content .content ul li a:active {
+.ReactModal__Overlay .ReactModal__Content .content ul li a,
+.ReactModal__Overlay .ReactModal__Content .content ul li a:link,
+.ReactModal__Overlay .ReactModal__Content .content ul li a:active {
   text-align: center;
   color: white;
   display: block;
@@ -414,27 +416,39 @@ select:hover {
   padding: 5px 10px;
 }
 
-.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(1) a, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(1) a:link, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(1) a:active {
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(1) a,
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(1) a:link,
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(1) a:active {
   background-color: #3b5998;
 }
 
-.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(1) a:hover, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(1) a:link:hover, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(1) a:active:hover {
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(1) a:hover,
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(1) a:link:hover,
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(1) a:active:hover {
   background-color: #4c70ba;
 }
 
-.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(2) a, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(2) a:link, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(2) a:active {
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(2) a,
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(2) a:link,
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(2) a:active {
   background-color: #e4405f;
 }
 
-.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(2) a:hover, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(2) a:link:hover, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(2) a:active:hover {
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(2) a:hover,
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(2) a:link:hover,
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(2) a:active:hover {
   background-color: #ea6d84;
 }
 
-.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(3) a, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(3) a:link, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(3) a:active {
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(3) a,
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(3) a:link,
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(3) a:active {
   background-color: #02b875;
 }
 
-.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(3) a:hover, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(3) a:link:hover, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(3) a:active:hover {
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(3) a:hover,
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(3) a:link:hover,
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(3) a:active:hover {
   background-color: #03ea95;
 }
 
@@ -583,7 +597,9 @@ select:hover {
   }
 }
 
-.block01 .search .ring-item a, .block01 .search .ring-item a:link, .block01 .search .ring-item a:active {
+.block01 .search .ring-item a,
+.block01 .search .ring-item a:link,
+.block01 .search .ring-item a:active {
   display: block;
   margin: 0 auto;
   width: -webkit-fit-content;
@@ -596,20 +612,28 @@ select:hover {
 }
 
 @media screen and (max-width: 475px) {
-  .block01 .search .ring-item a, .block01 .search .ring-item a:link, .block01 .search .ring-item a:active {
+  .block01 .search .ring-item a,
+  .block01 .search .ring-item a:link,
+  .block01 .search .ring-item a:active {
     margin: initial;
     margin-bottom: 15px;
+    max-width: 43.75px;
+    min-width: 43.75px;
   }
 }
 
-.block01 .search .ring-item a .number, .block01 .search .ring-item a:link .number, .block01 .search .ring-item a:active .number {
+.block01 .search .ring-item a .number,
+.block01 .search .ring-item a:link .number,
+.block01 .search .ring-item a:active .number {
   position: absolute;
   right: -10px;
   top: -10px;
   background-color: #9D2D2D;
-  padding: 5px 12.5px;
+  padding: 2.5px 9px;
   border-radius: 30px;
   color: white;
+  font-size: .8em;
+  font-weight: 800;
 }
 
 .block01 .search .note {
