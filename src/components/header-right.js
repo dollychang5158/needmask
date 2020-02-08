@@ -7,7 +7,7 @@ export default () => {
       Image: file(relativePath: { eq: "header02.png" }) {
         childImageSharp {
           fluid(maxWidth: 433) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_noBase64
           }
         }
       }

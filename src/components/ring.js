@@ -9,7 +9,7 @@ const Ring = () => {
       ringRead: file(relativePath: { eq: "ring-read.png" }) {
         childImageSharp {
           fluid(maxWidth: 76) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_noBase64
           }
         }
       }
@@ -17,7 +17,7 @@ const Ring = () => {
       ring: file(relativePath: { eq: "ring.png" }) {
         childImageSharp {
           fluid(maxWidth: 76) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_noBase64
           }
         }
       }
