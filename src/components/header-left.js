@@ -14,7 +14,7 @@ export default () => {
     }
   `)
   return (
-      <Img
+      <Img 
         fluid={data.Image.childImageSharp.fluid}
       />
   )

@@ -24,7 +24,9 @@ const Header = ({ siteTitle }) => (
     <div className="container keyview">
       <div className="kv-content">
         <div className="title">
-          <HeaderLeft />
+          <div className="headerLeft">
+            <HeaderLeft />
+          </div>
           <h1>
             <span>你今天</span>
             <br />

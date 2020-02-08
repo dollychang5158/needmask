@@ -450,6 +450,9 @@ select:hover {
 
 .keyview .kv-content .title {
   position: relative;
+  width: 100%;
+  max-width: 500px;
+  min-width: 300px;
 }
 
 .keyview .kv-content .title h1 {
@@ -467,7 +470,6 @@ select:hover {
 @media screen and (max-width: 475px) {
   .keyview .kv-content .title h1 {
     font-size: 2em;
-    top: 1.25em;
   }
 }
 
@@ -475,22 +477,10 @@ select:hover {
   margin-left: 1em;
 }
 
-@media screen and (max-width: 475px) {
-  .keyview .kv-content .img-content {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-  }
-}
-
-@media screen and (max-width: 475px) {
-  .keyview .kv-content .img-content img {
-    width: 80%;
-    height: 80%;
-  }
+.keyview .kv-content .img-content {
+  width: 100%;
+  max-width: 430px;
+  min-width: 270px;
 }
 
 .block01 .search {
