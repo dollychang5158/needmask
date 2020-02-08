@@ -100,8 +100,8 @@ const IndexPage = () => {
                 onChange={setStreet}
                 values={streets}
               />
+              <Ring/>
             </div>
-            <Ring/>
             <div className="note">
               <p>
                 ＊資料每兩分鐘更新一次，預設排序為該區剩餘口罩總計數量 多 > 少。
