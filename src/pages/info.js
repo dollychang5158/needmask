@@ -8,21 +8,26 @@ const ModalExamplePage = () => (
       <div className="content">
         {modal ? (
           <>
-            <Link to={closeTo}></Link>
+            <Link className="close" to={closeTo}></Link>
             <div className="container">
               <h2>製作</h2>
               <br />
               <div>
-              <p>製作: Dolly Chang、Otis Chen、皮寶(我家的貓)</p>
-              <p>資料來源：藥局+衛生所即時庫存 geojson by kiang</p>
-              <p>© Dolly&Otis All rights reserved.</p>{" "}
+                <p>製作: Dolly Chang、Otis Chen、皮寶(我家的貓)</p>
+                <p>資料來源：藥局+衛生所即時庫存 geojson by kiang</p>
+                <p>© Dolly&Otis All rights reserved.</p>{" "}
               </div>
-              
+              <ul>
+                <li><a href="https://www.facebook.com/DollyLife/" target="_blank">Facebook</a></li>
+                <li><a href="https://www.instagram.com/dollyclife/" target="_blank">IG</a></li>
+                <li><a href="https://medium.com/@changpeiwen" target="_blank">Medium</a></li>
+              </ul>
+
             </div>
           </>
         ) : (
-          <></>
-        )}
+            <></>
+          )}
       </div>
     )}
   </ModalRoutingContext.Consumer>

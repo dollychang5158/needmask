@@ -318,17 +318,7 @@ select:hover {
   position: relative;
 }
 
-.ReactModal__Overlay .ReactModal__Content .content:before {
-  content: " ";
-  width: 10px;
-  height: 100px;
-  background-color: #FFC500;
-  position: absolute;
-  top: 30px;
-  left: -30px;
-}
-
-.ReactModal__Overlay .ReactModal__Content .content a {
+.ReactModal__Overlay .ReactModal__Content .content .close {
   -ms-flex-item-align: end;
       align-self: flex-end;
   display: block;
@@ -341,14 +331,14 @@ select:hover {
   height: 30px;
 }
 
-.ReactModal__Overlay .ReactModal__Content .content a:hover {
+.ReactModal__Overlay .ReactModal__Content .content .close:hover {
   -webkit-transform: scale(1.25);
           transform: scale(1.25);
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
-.ReactModal__Overlay .ReactModal__Content .content a:before {
+.ReactModal__Overlay .ReactModal__Content .content .close:before {
   content: " ";
   width: 3px;
   height: 15px;
@@ -361,7 +351,7 @@ select:hover {
           transform: rotate(-45deg);
 }
 
-.ReactModal__Overlay .ReactModal__Content .content a:after {
+.ReactModal__Overlay .ReactModal__Content .content .close:after {
   content: " ";
   width: 3px;
   height: 15px;
@@ -379,7 +369,54 @@ select:hover {
   font-weight: 300;
 }
 
-.keyview svg {
+.ReactModal__Overlay .ReactModal__Content .content ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin-left: 0;
+}
+
+.ReactModal__Overlay .ReactModal__Content .content ul li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding-right: 5px;
+}
+
+.ReactModal__Overlay .ReactModal__Content .content ul li a, .ReactModal__Overlay .ReactModal__Content .content ul li a:link, .ReactModal__Overlay .ReactModal__Content .content ul li a:active {
+  text-align: center;
+  color: white;
+  display: block;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(1) a, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(1) a:link, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(1) a:active {
+  background-color: #3b5998;
+}
+
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(1) a:hover, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(1) a:link:hover, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(1) a:active:hover {
+  background-color: #4c70ba;
+}
+
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(2) a, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(2) a:link, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(2) a:active {
+  background-color: #e4405f;
+}
+
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(2) a:hover, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(2) a:link:hover, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(2) a:active:hover {
+  background-color: #ea6d84;
+}
+
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(3) a, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(3) a:link, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(3) a:active {
+  background-color: #02b875;
+}
+
+.ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(3) a:hover, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(3) a:link:hover, .ReactModal__Overlay .ReactModal__Content .content ul li:nth-child(3) a:active:hover {
+  background-color: #03ea95;
+}
+
+.keyview img {
   width: 100%;
 }
 
@@ -593,6 +630,15 @@ select:hover {
 .block04 {
   background-color: rgba(255, 197, 0, 0.25);
   position: relative;
+}
+
+.block04 .bg {
+  position: absolute;
+  background-image: url("../images/bg.png");
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .block04 .item-content-group {

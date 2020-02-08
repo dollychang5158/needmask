@@ -127,6 +127,7 @@ const IndexPage = () => {
         </div>
 
         <div className="block04">
+          <div className="bg"></div>
           <div className="container item-content-group">
             <LoadMore
               data={matchedHospitals}
