@@ -15,6 +15,7 @@ const ListItem = ({ coordinates, properties }) => (
           : ""
       }
       target="_blank"
+      rel="noopener noreferrer"
     >
       <div className="row item-content">
         <div className="col col-lg-5 col-12">

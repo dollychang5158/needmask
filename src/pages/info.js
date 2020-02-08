@@ -18,9 +18,9 @@ const ModalExamplePage = () => (
                 <p>© Dolly&Otis All rights reserved.</p>{" "}
               </div>
               <ul>
-                <li><a href="https://www.facebook.com/DollyLife/" target="_blank">Facebook</a></li>
-                <li><a href="https://www.instagram.com/dollyclife/" target="_blank">IG</a></li>
-                <li><a href="https://medium.com/@changpeiwen" target="_blank">Medium</a></li>
+                <li><a href="https://www.facebook.com/DollyLife/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                <li><a href="https://www.instagram.com/dollyclife/" target="_blank" rel="noopener noreferrer">IG</a></li>
+                <li><a href="https://medium.com/@changpeiwen" target="_blank" rel="noopener noreferrer">Medium</a></li>
               </ul>
 
             </div>
