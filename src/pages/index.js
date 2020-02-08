@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { SORT_BY_TOTAL, SORT_ARRAY, filterHospitals } from "../lib/sort"
 import LoadMore from "../components/load-more"
+import Ring from '../components/ring'
 
 const INIT_MAX_ITEM = 5
 const STEP = 5
@@ -100,6 +101,7 @@ const IndexPage = () => {
                 values={streets}
               />
             </div>
+            <Ring/>
             <div className="note">
               <p>
                 ＊資料每兩分鐘更新一次，預設排序為該區剩餘口罩總計數量 多 > 少。

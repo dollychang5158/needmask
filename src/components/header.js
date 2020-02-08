@@ -1,8 +1,6 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-// import TitleImage from "../assets/header01.png"
-// import DetectiveImage from "../assets/header02.png"
 import Icon from "../assets/navLogoIcon.svg"
 import More from "../assets/navMoreIcon.svg"
 import HeaderLeft from "./header-left"
