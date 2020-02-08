@@ -5,42 +5,41 @@ import React from "react"
 // import DetectiveImage from "../assets/header02.png"
 import Icon from "../assets/navLogoIcon.svg"
 import More from "../assets/navMoreIcon.svg"
+import HeaderLeft from "./header-left"
+import HeaderRight from "./header-right"
 
 const Header = ({ siteTitle }) => (
   <>
     <nav className="navbar fixed-top navbar-light bg-white">
       <div className="narbar-content">
-            <Icon />
-            <Link
-              to="/info/"
-              state={{
-                modal: true,
-              }}
-            >
-              <More />
-            </Link>
- 
+        <Icon />
+        <Link
+          to="/info/"
+          state={{
+            modal: true,
+          }}
+        >
+          <More />
+        </Link>
       </div>
     </nav>
     <div className="container keyview">
-      <div className="kv-content" >
+      <div className="kv-content">
         <div className="title">
-          <img src="/assets/header01.png"></img>
-          {/* <TitleImage /> */}
+          <HeaderLeft />
           <h1>
-            <span>你今天</span><br />
+            <span>你今天</span>
+            <br />
             <span className="sec-title">買到口罩了嗎？</span>
           </h1>
         </div>
-        <div className="img-content" >
-          <img src="/assets/header02.png"></img>
-          {/* <DetectiveImage /> */}
+        <div className="img-content">
+          <HeaderRight />
         </div>
       </div>
     </div>
   </>
 )
-
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

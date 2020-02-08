@@ -1,13 +1,17 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-export default class LoadMore extends React.Component {
+export default class LoadMore extends React.PureComponent {
+  constructor(props) {
+    super(props)
+    this.renderItem = this.renderItem.bind(this)
+  }
   isBottom = e => {
     return e.getBoundingClientRect().bottom <= window.innerHeight + 50
   }
 
   handleLoadMore = () => {
-    if(this.props.maxItem<this.props.data.length) {
+    if (this.props.maxItem < this.props.data.length) {
       this.props.onChange(this.props.maxItem + this.props.step)
     }
   }
@@ -27,15 +31,16 @@ export default class LoadMore extends React.Component {
     document.removeEventListener("scroll", this.trackScrolling)
   }
 
+  renderItem() {
+    const result = []
+    for (let index = 0; index < this.props.data.length && index < this.props.maxItem; index++) {
+      result.push(this.props.renderItem(this.props.data[index], index))
+    }
+    return result
+  }
+
   render() {
-    return (
-      <>
-        {this.props.data.map((item, index) => {
-          if (index < this.props.maxItem)
-            return this.props.renderItem(item, index)
-        })}
-      </>
-    )
+    return <>{this.renderItem()}</>
   }
 }
 
@@ -44,5 +49,5 @@ LoadMore.propTypes = {
   renderItem: PropTypes.func,
   step: PropTypes.number,
   maxItem: PropTypes.number,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
 }

@@ -63,6 +63,14 @@ const IndexPage = () => {
     setMaxItem(INIT_MAX_ITEM)
   }
 
+  const _renderItem = (hospital, index) => (
+    <ListItem
+      key={index}
+      properties={hospital.properties}
+      coordinates={hospital.geometry.coordinates}
+    />
+  )
+
   return (
     <Layout>
       <SEO title="Need Mask" />
@@ -125,13 +133,7 @@ const IndexPage = () => {
               maxItem={maxItem}
               step={STEP}
               onChange={setMaxItem}
-              renderItem={(hospital, index) => (
-                <ListItem
-                  key={index}
-                  properties={hospital.properties}
-                  coordinates={hospital.geometry.coordinates}
-                />
-              )}
+              renderItem={_renderItem}
             />
           </div>
         </div>
