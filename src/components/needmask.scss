@@ -230,7 +230,15 @@ select {
         margin-bottom: 30px;
         max-width: 800px;
         margin: 30px auto;
-
+        @include breakpoint(sm){
+            position: relative;
+        }
+        p{
+            @include breakpoint(sm){
+                position: absolute;
+                top: 15px;
+            }
+        }
         .select-ring-wrap {
             display: flex;
             width: 100%;
@@ -238,7 +246,6 @@ select {
 
             @include breakpoint(sm) {
                 flex-direction: column-reverse;
-                height: 53.75px;
             }
         }
 

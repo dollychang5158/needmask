@@ -525,6 +525,19 @@ select:hover {
   margin: 30px auto;
 }
 
+@media screen and (max-width: 475px) {
+  .block01 .search {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .block01 .search p {
+    position: absolute;
+    top: 15px;
+  }
+}
+
 .block01 .search .select-ring-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -541,7 +554,6 @@ select:hover {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
-    height: 53.75px;
   }
 }
 
