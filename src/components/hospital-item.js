@@ -7,10 +7,10 @@ const ListItem = ({ coordinates, properties }) => (
       className="item"
       href={
         coordinates && coordinates.length > 1
-          ? "https://www.google.com/maps/?q=" +
-          coordinates[1] +
-          "," +
-          coordinates[0] +
+          ? "https://www.google.com/maps/search/?api=1&query=" +
+          properties.name +
+          "+" +
+          properties.address +
           ""
           : ""
       }

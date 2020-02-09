@@ -11,6 +11,7 @@ import Ring from '../components/ring'
 
 const INIT_MAX_ITEM = 5
 const STEP = 5
+const URL = "https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json"
 
 const IndexPage = () => {
   const [hospitals, setHospitals] = useState([])
@@ -22,9 +23,7 @@ const IndexPage = () => {
   const [maxItem, setMaxItem] = useState(INIT_MAX_ITEM)
 
   useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json"
-    )
+    fetch(URL)
       .then(data => data.json())
       .then(data => {
         setHospitals(data.features.map(hospital => hospital))
