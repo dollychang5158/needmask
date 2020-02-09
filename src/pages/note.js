@@ -8,7 +8,7 @@ const ModalExamplePage = () => (
       <div className="content note-container">
         {modal ? (
           <>
-            <Link className="close" to={closeTo}></Link>
+            <Link className="close" rel="noopener noreferrer" to={closeTo}></Link>
             <div className="container">
               <h2>最新資訊更新</h2>
               <br />
